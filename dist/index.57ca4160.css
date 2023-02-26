@@ -1,8 +1,10 @@
 .container {
+  max-width: 800px;
   background: #f4fafa;
   border-radius: 15px;
-  grid-template-columns: repeat(2, 400px);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 40px;
+  margin: 0 auto;
   padding: 30px 40px;
   display: grid;
 }
@@ -209,6 +211,13 @@ body h1 {
   letter-spacing: 9px;
   margin-bottom: 25px;
   font-size: 28px;
+}
+
+@media (max-width: 767px) {
+  .container {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
 }
 
 /*# sourceMappingURL=index.57ca4160.css.map */
