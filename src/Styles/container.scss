@@ -1,0 +1,8 @@
+.container {
+	display: grid;
+	grid-template-columns: repeat(2, 400px);
+	gap: 40px;
+	background: $containerColor;
+	border-radius: 15px;
+	padding: 30px 40px;
+}

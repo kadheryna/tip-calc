@@ -1,0 +1,25 @@
+@import "colors.scss";
+@import "container.scss";
+@import "inputData.scss";
+@import "resultData.scss";
+
+* {
+	margin: 0;
+	font-family: "Space Mono", monospace;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 100vh;
+	background-color: $bodyColor;
+	color: $grey;
+
+	h1 {
+		font-size: 28px;
+		letter-spacing: 9px;
+		margin-bottom: 25px;
+	}
+}

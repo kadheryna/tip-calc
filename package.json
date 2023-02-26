@@ -1,0 +1,14 @@
+{
+	"name": "tip-calc",
+	"source": "src/index.html",
+	"browserslist": "> 0.5%, last 2 versions, not dead",
+	"scripts": {
+		"start": "parcel --open",
+		"build": "parcel build"
+	},
+	"devDependencies": {
+		"@parcel/transformer-sass": "^2.5.0",
+		"parcel": "^2.7.0",
+		"sass": "^1.58.3"
+	}
+}

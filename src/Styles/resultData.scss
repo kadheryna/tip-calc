@@ -1,0 +1,55 @@
+.resultData {
+	display: flex;
+	flex-direction: column;
+	background: $darkGreen;
+	padding: 10px 30px;
+	border-radius: 25px;
+	justify-content: space-around;
+
+	span {
+		font-size: 40px;
+		color: $lightGreen;
+	}
+
+	.resultTitle {
+		display: flex;
+		flex-direction: column;
+		width: 40%;
+		text-align: left;
+		letter-spacing: 1px;
+
+		h2 {
+			font-size: 16px;
+			color: $inputColor;
+			margin: 0 0 6px 0;
+		}
+		p {
+			font-size: 13px;
+			margin: 0;
+			color: $lightGrey;
+		}
+	}
+
+	.firstResult,
+	.secondResult {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		font-weight: bold;
+	}
+
+	.resetButton {
+		cursor: pointer;
+		border: none;
+		border-radius: 5px;
+		height: 50px;
+		font-weight: bold;
+		font-size: 22px;
+		background: $lightGreen;
+		color: $darkGreen;
+	}
+	.resetButton:hover {
+		background: $activeButton;
+	}
+}

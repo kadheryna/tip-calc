@@ -1,0 +1,113 @@
+.inputData {
+	display: flex;
+	flex-direction: column;
+
+	label {
+		padding-bottom: 5px;
+		letter-spacing: 2px;
+	}
+
+	.bill {
+		display: flex;
+		flex-direction: column;
+		font-size: 15px;
+
+		.billInput {
+			border: 1px solid $containerColor;
+			border-radius: 5px;
+			text-align: right;
+			padding: 5px 10px;
+			height: 35px;
+			font-size: 24px;
+			background: url(/src/Images/icon-dollar.svg) no-repeat, $inputColor;
+			background-position: 5% 50%;
+			color: $darkGreen;
+		}
+	}
+	.billInput:active,
+	.billInput:focus {
+		outline: none;
+		border: 1px solid $lightGreen;
+	}
+
+	.tip {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		margin: 40px 0;
+		gap: 10px;
+
+		h2 {
+			grid-column: 1/4;
+			margin: 0 0 10px;
+			font-size: 15px;
+			letter-spacing: 1px;
+		}
+
+		.tipButton {
+			cursor: pointer;
+			border: none;
+			border-radius: 5px;
+			height: 50px;
+			font-size: 24px;
+			background: $darkGreen;
+			color: $white;
+			font-weight: bold;
+		}
+		.tipButton:focus {
+			background: $activeButton;
+		}
+
+		.customTip {
+			border: 1px solid $containerColor;
+			text-align: center;
+			letter-spacing: 1px;
+			border-radius: 5px;
+			height: 50px;
+			font-size: 22px;
+			background: $inputColor;
+			color: $darkGreen;
+			font-weight: bold;
+		}
+
+		.customTip:active,
+		.customTip:focus {
+			outline: none;
+			border: 1px solid $lightGreen;
+		}
+	}
+
+	.people {
+		display: flex;
+		flex-direction: column;
+		font-size: 15px;
+
+		.warning {
+			display: flex;
+			flex: row;
+			justify-content: space-between;
+
+			.warningTitle {
+				display: none;
+				font-size: 15px;
+				color: $waring;
+			}
+		}
+
+		.peopleNumber {
+			border: 1px solid $containerColor;
+			border-radius: 5px;
+			text-align: right;
+			padding: 5px 10px;
+			height: 35px;
+			font-size: 24px;
+			background: url(/src/Images/icon-person.svg) no-repeat, $inputColor;
+			background-position: 5% 50%;
+			color: $darkGreen;
+		}
+		.peopleNumber:active,
+		.peopleNumber:focus {
+			outline: none;
+			border: 1px solid $lightGreen;
+		}
+	}
+}
