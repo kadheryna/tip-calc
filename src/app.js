@@ -42,14 +42,13 @@ function customTipCheck() {
 }
 
 function calculate() {
-	let tipValue = tipButton.textContent;
+	let tipValue = this.textContent;
 	let bill = Number(billInput.value);
 	let people = Number(peopleInput.value);
-	let custom = Number(customTip.value);
+	let custom = customTip.value;
 	if (bill != 0 && people != 0) {
 		switch (tipValue) {
 			case "5%":
-				result = bill * 0.05;
 				break;
 			case "10%":
 				result = bill * 0.1;
@@ -64,15 +63,14 @@ function calculate() {
 				result = bill * 0.5;
 				break;
 			case `${custom}`:
-				result = bill * custom;
+				result = bill * Number(custom);
 				break;
 		}
-
-		let calculatedTip = result / people;
-		tipTotal.innerHTML = `$${calculatedTip}`;
-		let calculatedTotal = bill / people + result;
-		personTotal.innerHTML = `$${calculatedTotal}`;
 	}
+	let calculatedTip = (result / people).toFixed(2);
+	tipTotal.innerHTML = `$${calculatedTip}`;
+	let calculatedTotal = (bill / people + calculatedTip).toFixed(2);
+	personTotal.innerHTML = `$${calculatedTotal}`;
 }
 function reset() {
 	personTotal.innerHTML = "$0.00";
@@ -85,5 +83,6 @@ function reset() {
 peopleInput.addEventListener("input", personCheck);
 billInput.addEventListener("input", billCheck);
 customTip.addEventListener("input", customTipCheck);
+customTip.addEventListener("input", calculate);
 resetButton.addEventListener("click", reset);
 tipButton.forEach(button => button.addEventListener("click", calculate));
