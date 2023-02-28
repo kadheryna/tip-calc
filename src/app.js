@@ -42,13 +42,14 @@ function customTipCheck() {
 }
 
 function calculate() {
-	let tipValue = this.textContent;
+	let tipValue = this.textContent || this.value;
 	let bill = Number(billInput.value);
 	let people = Number(peopleInput.value);
 	let custom = customTip.value;
 	if (bill != 0 && people != 0) {
 		switch (tipValue) {
 			case "5%":
+				result = bill * 0.05;
 				break;
 			case "10%":
 				result = bill * 0.1;
@@ -63,18 +64,18 @@ function calculate() {
 				result = bill * 0.5;
 				break;
 			case `${custom}`:
-				result = bill * Number(custom);
+				result = bill * (Number(custom) / 100);
 				break;
 		}
 	}
 	let calculatedTip = (result / people).toFixed(2);
-	tipTotal.innerHTML = `$${calculatedTip}`;
-	let calculatedTotal = (bill / people + calculatedTip).toFixed(2);
-	personTotal.innerHTML = `$${calculatedTotal}`;
+	tipTotal.textContent = `$${calculatedTip}`;
+	let calculatedTotal = (bill / people + Number(calculatedTip)).toFixed(2);
+	personTotal.textContent = `$${calculatedTotal}`;
 }
 function reset() {
-	personTotal.innerHTML = "$0.00";
-	tipTotal.innerHTML = "$0.00";
+	personTotal.textContent = "$0.00";
+	tipTotal.textContent = "$0.00";
 	peopleInput.value = "";
 	billInput.value = "";
 	customTip.value = "";
